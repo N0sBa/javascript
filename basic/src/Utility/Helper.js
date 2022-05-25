@@ -23,6 +23,7 @@ export class Helper {
 	static getPosts() {
 		Helper.sendHttpRequest('GET', 'https://jsonplaceholder.typicode.com/posts').then(data => {
 			const listData = JSON.parse(data)
+			console.log(listData);
 			Helper.bindDataToTable('table', listData)
 		})
 	}
@@ -61,8 +62,8 @@ export class Helper {
 	}
 
 	static updatePost(postId) {
-        // eslint-disable-next-line no-unused-vars
-        const tooltip = import('../App/Tooltip');
+		// eslint-disable-next-line no-unused-vars
+		const tooltip = import('../App/Tooltip');
 		console.log('Update: ', postId)
 	}
 

@@ -2,7 +2,7 @@ const path = require('path');
 const cleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/app.js',
 	output: {
 		filename: '[contenthash].js',
