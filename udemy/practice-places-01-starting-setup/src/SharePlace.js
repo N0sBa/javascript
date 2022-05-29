@@ -32,9 +32,31 @@ class PlaceFinder {
     } else {
       this.map = new Map(coordinates);
     }
-    this.shareBtn.disabled = false;
-    const sharedLinkInputEl = document.getElementById('share-link');
-    sharedLinkInputEl.value = `${location.origin}/my-place?address=${encodeURI(address)}&lat=${coordinates.lat}&lng=${coordinates.lng}`;
+
+    // fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinates.lat},${coordinates.lng}&key=AIzaSyBQ9JYf27r61a1i73h1RsX3ikiD2a9MK5E`).then(response => {
+    //   return response.json();
+    // }).then(data => {
+    //   console.log(data);
+    // });
+    fetch('http://localhost:3000/add-location', {
+      method: 'POST',
+      body: JSON.stringify({
+        address: address,
+        lat: coordinates.lat,
+        lng: coordinates.lng
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => {
+      return response.json();
+    }).then(data => {
+      console.log(data);
+      const locationId = data.locId;
+      this.shareBtn.disabled = false;
+      const sharedLinkInputEl = document.getElementById('share-link');
+      sharedLinkInputEl.value = `${location.origin}/my-place?location=${locationId}`;
+    });
   }
 
   locateUserHandler() {
