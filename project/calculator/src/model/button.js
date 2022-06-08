@@ -7,8 +7,11 @@ export class Button extends HTMLElement {
     this.shadowRoot.innerHTML = `
     <style>
       :host {
-        display: block;
+        display: inline-block;
         width: 20%;
+      }
+      button {
+        width: 100%;
       }
     </style>
     <button>${title}</button>
@@ -16,8 +19,9 @@ export class Button extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('Connectd call back!')
-    console.log("Value: ", this.value);
+    this.dataset.value = this.value;
+    // console.log('Connectd call back!')
+    // console.log("Value: ", this.value);
   }
 }
 

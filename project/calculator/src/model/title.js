@@ -3,7 +3,6 @@ export class Title {
         this.id = id;
         this.title = title;
         this.elementNode = document.getElementById(id);
-        this.render();
     }
 
     render() {
