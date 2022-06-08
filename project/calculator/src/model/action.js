@@ -7,39 +7,39 @@ export class Action {
     this.process = '';
     this.buttonList = [
       [
-        { title: 'clr', value: 'clear' },
-        { title: '<=', value: 'backspace' },
-        { title: '', value: '' },
-        { title: '', value: '' },
-        { title: '', value: '' }
+        { title: 'clr', filter: 'clear', value: 'clear' },
+        { title: '<=', filter: 'backspace', value: 'backspace' },
+        { title: '', filter: '', value: '' },
+        { title: '', filter: '', value: '' },
+        { title: '', filter: '', value: '' }
       ],
       [
-        { title: '1', value: '1' },
-        { title: '2', value: '2' },
-        { title: '3', value: '3' },
-        { title: '+', value: '+' },
-        { title: '-', value: '-' },
+        { title: '1', filter: '1', value: '1' },
+        { title: '2', filter: '2', value: '2' },
+        { title: '3', filter: '3', value: '3' },
+        { title: '+', filter: '+', value: '+' },
+        { title: '-', filter: '-', value: '-' },
       ],
       [
-        { title: '4', value: '4' },
-        { title: '5', value: '5' },
-        { title: '6', value: '6' },
-        { title: 'x', value: '*' },
-        { title: '/', value: '/' },
+        { title: '4', filter: '4', value: '4' },
+        { title: '5', filter: '5', value: '5' },
+        { title: '6', filter: '6', value: '6' },
+        { title: 'x', filter: '*', value: '*' },
+        { title: '/', filter: '/', value: '/' },
       ],
       [
-        { title: '7', value: '7' },
-        { title: '8', value: '8' },
-        { title: '9', value: '9' },
-        { title: '0', value: '0' },
-        { title: '.', value: '.' }
+        { title: '7', filter: '7', value: '7' },
+        { title: '8', filter: '8', value: '8' },
+        { title: '9', filter: '9', value: '9' },
+        { title: '0', filter: '0', value: '0' },
+        { title: '.', filter: '.', value: '.' }
       ],
       [
-        { title: '√', value: 'squr_root2' },
-        { title: 'x²', value: 'squared' },
-        { title: '(', value: '(' },
-        { title: ')', value: ')' },
-        { title: '=', value: '=' }
+        { title: '√', filter: 'square_root', value: 'Math.sqrt($a)' },
+        { title: 'x²', filter: 'square', value: 'Math.pow($a,2)' },
+        { title: '(', filter: '(', value: '(' },
+        { title: ')', filter: ')', value: ')' },
+        { title: '=', filter: '=', value: '=' }
       ]
     ];
   }
@@ -79,13 +79,6 @@ export class Action {
         this.showResultComponent.processArea.textContent = this.process;
         this.showResultComponent.resultArea.textContent = '';
       } else {
-        if (valuesOperator.includes(value)) {
-          openPoint();
-        }
-
-        if (!flagPoint && value == '') {
-
-        }
         this.process += value;
         this.showResultComponent.processArea.textContent = this.process;
       }
