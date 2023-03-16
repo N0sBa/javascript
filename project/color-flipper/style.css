@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-size: 62.5%; */
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 5rem);
+}
+
+.flex-center-vertical {
+    align-items: center;
+}
+
+.flex-center-horizon {
+    justify-content: center;
+}
+
+
+/*LOGO*/
+.logo {
+    height: 25px;
+    border-radius: 50%;
+}
+
+/*NAVIGATION*/
+.navigation {
+    padding: 2rem;
+}
+
+.navigation > ul > li > a > span {
+    font-size: 24px;
+}
+
+/*CONTAINER*/
+.container {
+    height: 100px;
+    background-color: red;
+}
