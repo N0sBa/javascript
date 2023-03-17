@@ -7,14 +7,11 @@
     <title>Color Flipper</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <nav class="navigation">
-        <div class="logo">
-            <img src="./assets/sif_the_wolf.gif" alt="sif the wolf dark souls">
-        </div>
-        <ul class="flex flex-center-horizon">
+    <!-- <nav class="navigation">
+        <ul class="flex flex-gap flex-center-horizon flex-center-vertical">
             <li>
                 <a href="#">
                     <span>Color Flipper</span>
@@ -32,8 +29,35 @@
             </li>
         </ul>
     </nav>
-    <div class="container">
-
+    <div class="content flex flex-column">
+        <div class="container flex-grow-1">
+            a
+        </div>
+    </div> -->
+    <div class="container flex flex-column">
+        <nav class="navigation">
+            <ul class="flex flex-gap flex-center-horizon flex-center-vertical">
+                <li>
+                    <a href="#">
+                        <span>Color Flipper</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Simple Hex</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section id="content-section" class="content-section flex-grow-1 flex flex-center-horizon flex-center-vertical">
+            <div class="color-board flex flex-column">
+                <p class="color-board-text">
+                    <span>Background color: </span>
+                    <span id="color-board-text"></span>
+                </p>
+                <button id="color-board-btn">Click Me</button>
+            </div>
+        </section>
     </div>
 </body>
 </html>
